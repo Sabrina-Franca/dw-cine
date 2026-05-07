@@ -2,10 +2,12 @@ package br.unesp.cinema.model;
 
 import java.util.List;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
 @Entity
+@DiscriminatorValue("Client")
 public class Client extends User{
     @OneToMany(mappedBy="client")
     private List<Purchase> purchasesHistory;
